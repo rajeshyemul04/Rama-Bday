@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Happy Birthday Rowdy 🎉</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #ffecd2, #fcb69f);
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      padding-top: 15%;
+      color: #333;
+    }
+    h1 { font-size: 3em; }
+    #timer { font-size: 2em; margin-top: 20px; }
+    #message { display: none; font-size: 2em; margin-top: 20px; color: #111; }
+  </style>
+</head>
+<body>
+
+  <h1>🎁 Countdown to Rowdy's Birthday 🎉</h1>
+  <div id="timer"></div>
+  <div id="message">🥳 Happy Birthday, Rowdy!<br>You're one of a kind, and this year will be awesome! 💖</div>
+
+  <script>
+    const birthdayDate = new Date("2025-07-07T00:00:00"); // Rowdy's birthday date
+    const timer = document.getElementById('timer');
+    const message = document.getElementById('message');
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = birthdayDate - now;
+
+      if (diff <= 0) {
+        timer.style.display = "none";
+        message.style.display = "block";
+      } else {
+        const hours = Math.floor(diff / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        timer.textContent = `${hours}h ${minutes}m ${seconds}s left until the big surprise! 🎂`;
+      }
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+
+</body>
+</html>
