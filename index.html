@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Happy Birthday Rowdy 🎉</title>
+  <title>Happy Birthday Rowdy!</title>
   <style>
     body {
       background: linear-gradient(to right, #ffecd2, #fcb69f);
@@ -14,15 +14,23 @@
     #timer { font-size: 2em; margin-top: 20px; }
     #message { display: none; font-size: 2em; margin-top: 20px; color: #111; }
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
 <body>
 
   <h1>🎁 Countdown to Rowdy's Birthday 🎉</h1>
   <div id="timer"></div>
-  <div id="message">🥳 Happy Birthday, Rowdy!<br>You're one of a kind, and this year will be awesome! 💖</div>
+  <div id="message">
+    🎉 Happy Birthday Rowdy Ramakant (Bosssss)!<br><br>
+   
+    Enjoy your birthday. Be like a model and celebrate like a ROWDYYYY! 🎂<br><br>
+       May Venkateswara Swamy Bless YoU Govinda. <br><br>
+    And don’t forget to reply me —  <br><br>
+    – From me, Rajesh...😎
+  </div>
 
   <script>
-    const birthdayDate = new Date("2025-07-07T00:00:00"); // Rowdy's birthday date
+    const birthdayDate = new Date("2025-07-07T00:00:00");
     const timer = document.getElementById('timer');
     const message = document.getElementById('message');
 
@@ -33,11 +41,12 @@
       if (diff <= 0) {
         timer.style.display = "none";
         message.style.display = "block";
+        confetti({ particleCount: 150, spread: 80, origin: { y: 0.6 } });
       } else {
         const hours = Math.floor(diff / (1000 * 60 * 60));
         const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-        timer.textContent = `${hours}h ${minutes}m ${seconds}s left until the big surprise! 🎂`;
+        timer.textContent = `${hours}h ${minutes}m ${seconds}s until the surprise! 🎂`;
       }
     }
 
